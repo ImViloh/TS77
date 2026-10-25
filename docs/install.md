@@ -3,7 +3,7 @@
 ## What you need
 
 - Node.js 20 or newer to run the compiler. The companion process is written for Node.js 22 or newer. `open77-ts doctor` fails below 20 and warns below 22.
-- An OPEN//77 dedicated server. This repository was checked against the server at `E:\CODING\VOSS`.
+- An OPEN//77 dedicated server if you want to deploy a resource. Compiling a plugin does not require one.
 - The Devkit index produced by:
 
 ```bash

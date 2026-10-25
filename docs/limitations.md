@@ -1,6 +1,6 @@
 # Limitations
 
-This toolchain targets the OPEN//77 catalogue it was generated from. In this workspace that catalogue is **2.50.0+op77.148**. The VOSS server binary can be newer. A native that exists only in a later build is not declared, and a native removed from the catalogue is not invented.
+This toolchain targets the OPEN//77 catalogue it was generated from. In this workspace that catalogue is **2.50.0+op77.148**. A newer server binary can exist. A native that exists only in a later build is not declared, and a native removed from the catalogue is not invented.
 
 ## Runtime
 

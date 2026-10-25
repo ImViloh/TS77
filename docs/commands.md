@@ -47,7 +47,7 @@ open77-ts <command>
 npx ts2077 create my_resource --template basic
 npx ts2077 create my_job --template gameplay
 npx ts2077 create my_hud --template webui
-npx ts2077 create my_notes --template fullstack --out E:\CODING\VOSS\resources\my_notes
+npx ts2077 create my_notes --template fullstack --out D:\open77-server\resources\my_notes
 ```
 
 The destination folder name must equal `<name>`. `--out` sets that folder. Without `--out`, the folder is created in the current directory.

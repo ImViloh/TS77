@@ -21,7 +21,7 @@ A `ts77.config.ts` file must export an object. The compiler transpiles it in mem
   "backend": "src/backend/index.ts",
   "dependencies": [],
   "permissions": [],
-  "serverResourcesDir": "E:/CODING/VOSS/resources",
+  "serverResourcesDir": "D:/open77-server/resources",
   "web": {
     "root": "src/webui",
     "entry": "web/index.html",
