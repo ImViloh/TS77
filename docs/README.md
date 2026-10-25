@@ -1,6 +1,6 @@
 # TS77 documentation
 
-These files are the local reference for this repository. The same material is also published as one page at [index.html](index.html), which is what GitHub Pages serves when the site source is the `/docs` folder.
+The published guide is [index.html](index.html), also served at [imviloh.github.io/TS77](https://imviloh.github.io/TS77/).
 
 The catalogue this tree was generated from is **2.50.0+op77.148**. Natives, permissions, and reserved event names come from that index. They are not invented.
 
@@ -22,4 +22,4 @@ The catalogue this tree was generated from is **2.50.0+op77.148**. Natives, perm
 | [Examples](examples.md) | `hello_world` and `player_notes`, end to end |
 | [Limitations](limitations.md) | What the sandbox and this toolchain do not do |
 
-Start with [Install](install.md), then [Commands](commands.md). The player-notes walkthrough is in [Examples](examples.md).
+Plugin authors should start at the [published guide](https://imviloh.github.io/TS77/). [Install](install.md) also covers building this repository. [Commands](commands.md) lists every flag. The player-notes walkthrough is in [Examples](examples.md).

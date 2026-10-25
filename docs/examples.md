@@ -1,7 +1,5 @@
 # Examples
 
-Neither example has been played inside Cyberpunk 2077 as part of this repository's checks. `npm test` compiles them. `open77_validate` has compiled `hello_world` and `player_notes` with the server's Lua. Join a server before treating gameplay as verified.
-
 ## hello_world
 
 `examples/hello_world` is a client, a server, a shared greeting, and a React HUD in `ui/`.

@@ -1,7 +1,6 @@
 /**
  * OPEN//77 client declarations for catalogue build 2.50.0+op77.148.
  * Generated from the official Devkit index. Do not edit by hand.
- * Regenerate with `npm run generate` inside the TS77 repo.
  */
 /// <reference path="./tstl-language-extensions.d.ts" />
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2
+
+- The README and the guide are written for people installing the package.
+- Published files no longer include a path from the machine that generated them.
+
 ## 1.0.1
 
 - `create`, `init`, and `build` write `tsconfig.json`. The editor reads that file and then the client or server project, so `@open77/sdk/client` and the native declarations resolve.

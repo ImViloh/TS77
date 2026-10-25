@@ -2,6 +2,9 @@ node_modules/
 dist/
 packages/*/dist/
 examples/**/dist/
+examples/**/tsconfig.client.json
+examples/**/tsconfig.server.json
+examples/**/tsconfig.node.json
 examples/**/web/
 examples/**/ui/node_modules/
 examples/**/src/webui/node_modules/

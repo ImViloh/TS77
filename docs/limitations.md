@@ -1,6 +1,6 @@
 # Limitations
 
-This toolchain targets the OPEN//77 catalogue it was generated from. In this workspace that catalogue is **2.50.0+op77.148**. A newer server binary can exist. A native that exists only in a later build is not declared, and a native removed from the catalogue is not invented.
+This package targets OPEN//77 catalogue **2.50.0+op77.148**. A native added in a later server build is not declared until that catalogue is updated. A native removed from the catalogue is not invented.
 
 ## Runtime
 

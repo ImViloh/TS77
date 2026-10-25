@@ -8,7 +8,7 @@ A Node entry that imports `@open77-ts/client` fails before `tsc` runs, with `Nod
 
 ## Lua that does not parse
 
-`validate` parses each bundle with luaparse. `open77_validate` from the Devkit compiles them with the server's own Lua when the server is installed. The notes resource has been compiled that way against binary 2.50.0+op77.156. That check is static. It does not start a session.
+`validate` parses each bundle. `open77_validate` from the Devkit compiles them with the server's Lua when a server is installed. That check does not start a session.
 
 The manifest is not Lua. Do not run it through a Lua parser.
 

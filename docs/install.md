@@ -1,8 +1,21 @@
 # Install
 
-## What you need
+## Install the package
 
-- Node.js 20 or newer to run the compiler. The companion process is written for Node.js 22 or newer. `open77-ts doctor` fails below 20 and warns below 22.
+Node.js 20 or newer. A Node companion needs Node.js 22.
+
+```bash
+npx ts2077 create my_plugin --template basic --no-install
+cd my_plugin
+npm install
+npm run dev
+```
+
+The npm package is `ts2077`. The commands are `ts77` and `open77-ts`. The rest of this page is for working on the TS77 repository itself.
+
+## What the repository build needs
+
+- Node.js 20 or newer. `ts77 doctor` fails below 20 and warns below 22.
 - An OPEN//77 dedicated server if you want to deploy a resource. Compiling a plugin does not require one.
 - The Devkit index produced by:
 

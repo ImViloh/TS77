@@ -836,7 +836,7 @@ const db = require("rethinkdb");</pre>
 <section id="limits">
   <h2>Limits</h2>
   <p>The dedicated server sandbox has no <code>require</code>, <code>os</code>, <code>io</code>, <code>debug</code>, <code>package</code>, <code>load</code>, or <code>collectgarbage</code>. The client also removes <code>setmetatable</code>. Bundles inline their helpers and do not fall back to a global <code>require</code>.</p>
-  <p>This page and the tests were checked by compiling Lua and by installing a packed <code>ts77</code> on Windows. A Cyberpunk 2077 session was not joined, so in-game rendering, a live reload, and a live database server are unverified. Linux CI is described in the repository workflow and was not executed in this workspace.</p>
+  <p>Declarations in this package follow catalogue 2.50.0+op77.148. A native added in a later server build is not declared until that catalogue is updated.</p>
   <footer>TS77 · catalogue 2.50.0+op77.148 · declarations generated from the OPEN//77 Devkit index · ${natives.length} declared natives · ${omitted.length} omitted</footer>
 </section>
 </main>

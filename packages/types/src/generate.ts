@@ -319,7 +319,6 @@ function renderRuntime(runtime: "client" | "server", cards: ApiCard[], build: st
         `/**`,
         ` * OPEN//77 ${runtime} declarations for catalogue build ${build}.`,
         ` * Generated from the official Devkit index. Do not edit by hand.`,
-        ` * Regenerate with \`npm run generate\` inside the TS77 repo.`,
         ` */`,
         `/// <reference path="./tstl-language-extensions.d.ts" />`,
         ``,
@@ -462,7 +461,6 @@ function main(): void {
     const reserved = [...new Set((events.reservedPrefixes ?? []).map((entry) => entry.prefix))].sort();
     const catalogue = {
         build,
-        indexDir: directory,
         omittedUnavailable: omitted,
         skipped,
         reservedPrefixes: reserved,
