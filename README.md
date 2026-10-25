@@ -1,4 +1,4 @@
-# OPEN//77 TypeScript
+# TS77
 
 Compile OPEN//77 resources from TypeScript. Gameplay becomes Lua 5.4. A separate Node process runs backend services. React interfaces stay JavaScript inside the game's Chromium surface. Native names, parameters, and permissions come from the OPEN//77 Devkit catalogue, which in this workspace is **2.50.0+op77.148**.
 

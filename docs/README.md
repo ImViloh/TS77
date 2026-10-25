@@ -1,4 +1,4 @@
-# OPEN//77 TypeScript documentation
+# TS77 documentation
 
 These files are the local reference for this repository. The same material is also published as one page at [index.html](index.html), which is what GitHub Pages serves when the site source is the `/docs` folder.
 

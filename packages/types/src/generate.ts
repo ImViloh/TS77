@@ -319,7 +319,7 @@ function renderRuntime(runtime: "client" | "server", cards: ApiCard[], build: st
         `/**`,
         ` * OPEN//77 ${runtime} declarations for catalogue build ${build}.`,
         ` * Generated from the official Devkit index. Do not edit by hand.`,
-        ` * Regenerate with \`npm run generate\` inside the open77-typescript repo.`,
+        ` * Regenerate with \`npm run generate\` inside the TS77 repo.`,
         ` */`,
         `/// <reference path="./tstl-language-extensions.d.ts" />`,
         ``,
