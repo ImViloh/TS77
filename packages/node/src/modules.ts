@@ -26,7 +26,7 @@ export function createResourceRequire(resourceDir: string): NodeRequire {
 }
 
 function assertLoadable(root: string, id: string, req: NodeRequire): void {
-    if (typeof id !== "string" || id.length === 0 || id.includes("\0") || path.isAbsolute(id)) {
+    if (typeof id !== "string" || id.length === 0 || id.includes("\0") || path.isAbsolute(id) || path.win32.isAbsolute(id)) {
         throw new Error("module_rejected");
     }
     if (GAME_MODULES.some((prefix) => id === prefix || id.startsWith(`${prefix}`))) {
