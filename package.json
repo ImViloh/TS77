@@ -39,7 +39,7 @@
   "scripts": {
     "generate": "node packages/types/dist/generate.js",
     "build:tools": "tsc -p packages/types/tsconfig.json && tsc -p packages/compiler/tsconfig.json && tsc -p packages/cli/tsconfig.json && npm run generate && tsc -p packages/sdk/tsconfig.json && tsc -p packages/shared/tsconfig.json && tsc -p packages/node/tsconfig.json",
-    "test": "npm run build:tools && node --test tests/framework.test.cjs tests/bridge.test.cjs tests/cli.test.cjs",
+    "test": "npm run build:tools && node scripts/ensure-webui.cjs && node --test tests/framework.test.cjs tests/bridge.test.cjs tests/cli.test.cjs",
     "docs:check": "node scripts/check-docs.cjs",
     "prepublishOnly": "npm test && npm run docs:check"
   },
