@@ -9,7 +9,6 @@ The server sandbox has no global `require` and no `debug` library. The compiler 
 ## Requirements
 
 - Node.js 20 or newer
-- An OPEN//77 server. This repo was checked against the server at `E:\CODING\VOSS`
 - The Devkit index cache created by `npx -y @open2077/mcp init --server-dir <server>`
 
 ## Install
