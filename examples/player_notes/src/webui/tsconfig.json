@@ -7,7 +7,6 @@
     "strict": true,
     "skipLibCheck": true,
     "lib": ["ES2022", "DOM"],
-    "types": ["vite/client"],
     "paths": {
       "@open77-ts/webui": ["../../../../packages/webui/src/index.ts"]
     }
