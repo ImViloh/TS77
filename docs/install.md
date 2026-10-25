@@ -27,7 +27,7 @@ npm run build:tools
 
 ## Packages the compiler resolves
 
-These names are local to this repository. They are not packages you install from the public npm registry.
+These import names are resolved from inside the `ts2077` package. They are not separate packages on the public npm registry.
 
 | Import | Runs in | Source |
 |---|---|---|

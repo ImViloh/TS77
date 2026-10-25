@@ -1,8 +1,14 @@
 {
-  "name": "ts77",
-  "version": "1.0.0",
+  "name": "ts2077",
+  "version": "1.0.1",
   "description": "TypeScript framework for OPEN//77 plugins. Compiles gameplay to Lua 5.4 and can host a React WebUI and an optional Node companion.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImViloh/TS77.git"
+  },
+  "homepage": "https://imviloh.github.io/TS77/",
+  "bugs": "https://github.com/ImViloh/TS77/issues",
   "type": "commonjs",
   "engines": {
     "node": ">=20"
@@ -27,6 +33,11 @@
     "packages/server/package.json",
     "packages/webui",
     "templates",
+    "!templates/**/node_modules",
+    "!templates/**/dist",
+    "!**/*.lua.map",
+    "!**/.open77",
+    "!**/open77-npm.d.ts",
     "docs",
     "LICENSE",
     "CHANGELOG.md",

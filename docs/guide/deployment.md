@@ -3,7 +3,7 @@
 `ts77 deploy` builds the plugin, then copies `open77.lua`, `dist`, `web`, `modules`, and `files` into `<server>/resources/<plugin-name>`.
 
 ```bash
-npx ts77 deploy --server D:\open77-server
+npx ts2077 deploy --server D:\open77-server
 ```
 
 The server directory is the folder that contains `server.jsonc`. The resources directory is the `resources` folder inside it. The path is saved in `open77-ts.json` as `serverResourcesDir`.

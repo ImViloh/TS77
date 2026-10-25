@@ -27,6 +27,7 @@ interface PackageJson {
 
 const compiler = require("../../compiler/dist/index.js") as {
     buildResource(resourceDir: string, options?: { dev?: boolean; deploy?: boolean }): BuildResult;
+    writeTypeScriptProjects(resourceDir: string): void;
     validateResource(resourceDir: string): BuildResult;
     doctor(resourceDir?: string): DoctorLine[];
     mapLuaPosition(luaFile: string, line: number, column?: number): Promise<MappedFrame | undefined>;
@@ -209,7 +210,7 @@ function writeProjectPackage(destination: string): void {
             validate: "ts77 validate",
         },
         devDependencies: {
-            ts77: `file:${spec}`,
+            ts2077: `file:${spec}`,
         },
     };
     writeFileSync(file, `${JSON.stringify(body, null, 2)}\n`, "utf8");
@@ -304,6 +305,7 @@ async function create(args: string[]): Promise<number> {
     }
     copyTemplate(template, destination, name, false);
     writeProjectPackage(destination);
+    compiler.writeTypeScriptProjects(destination);
     if (server) rememberServer(destination, server);
     if (args.includes("--no-install")) install = false;
     const installed = install ? installDependencies(destination, template) === 0 : false;
@@ -441,6 +443,7 @@ async function main(): Promise<number> {
         }
         copyTemplate("basic", dir, name, true);
         writeProjectPackage(dir);
+        compiler.writeTypeScriptProjects(dir);
         const server = argValue(args, "--server");
         if (server) rememberServer(dir, server);
         process.stdout.write(`initialized ${dir}\n`);

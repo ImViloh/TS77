@@ -49,8 +49,7 @@ export function buildResource(resourceDir: string, options: BuildOptions = {}): 
     if (buildNode && !config.backend) return { ok: false, messages: ["the node target requires a backend entry"], permissions: [], outputs: [] };
     const entry = options.dev && config.webDevEntry ? config.webDevEntry : config.webEntry;
     writeFlags(root, entry);
-    if (buildClient) writeTsconfig(root, "client", config.client);
-    if (buildServer) writeTsconfig(root, "server", config.server);
+    writeTypeScriptProjects(root);
     const problems = [
         ...(buildClient ? checkSide(root, "client") : []),
         ...(buildServer ? checkSide(root, "server") : []),
@@ -108,6 +107,7 @@ export function buildResource(resourceDir: string, options: BuildOptions = {}): 
     }
     if (buildNode && config.backend) {
         const nodeErrors = compileBackend(root, config.backend);
+        writeEditorSolution(root);
         if (nodeErrors.length > 0) return { ok: false, messages: nodeErrors, permissions: [], outputs: [] };
         outputs.push(path.join(root, "dist", "backend", "index.js"));
     }
@@ -187,6 +187,24 @@ function tsPath(fromDir: string, file: string): string {
     if (path.isAbsolute(relative)) return file.replace(/\\/g, "/");
     const slash = relative.replace(/\\/g, "/");
     return slash.startsWith(".") ? slash : `./${slash}`;
+}
+
+export function writeTypeScriptProjects(resourceDir: string): void {
+    const root = path.resolve(resourceDir);
+    const config = loadConfig(root);
+    const buildClient = config.targets.includes("open77-client");
+    const buildServer = config.targets.includes("open77-server");
+    if (buildClient) writeTsconfig(root, "client", config.client);
+    if (buildServer) writeTsconfig(root, "server", config.server);
+    writeEditorSolution(root);
+}
+
+function writeEditorSolution(resourceDir: string): void {
+    const references = ["tsconfig.client.json", "tsconfig.server.json", "tsconfig.node.json"]
+        .filter((file) => existsSync(path.join(resourceDir, file)))
+        .map((file) => ({ path: `./${file}` }));
+    if (references.length === 0) return;
+    writeFileSync(path.join(resourceDir, "tsconfig.json"), `${JSON.stringify({ files: [], references }, null, 2)}\n`, "utf8");
 }
 
 function writeTsconfig(resourceDir: string, runtime: "client" | "server", entry: string): void {

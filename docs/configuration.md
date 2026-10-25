@@ -63,13 +63,13 @@ Shared gameplay modules live in `src/shared` and are copied into each Lua bundle
 Each build rewrites:
 
 - `src/generated/flags.ts` — `webuiEntry`
-- `tsconfig.client.json`, `tsconfig.server.json`, and `tsconfig.node.json` when those targets run
+- `tsconfig.json` for the editor, plus `tsconfig.client.json`, `tsconfig.server.json`, and `tsconfig.node.json` when those targets run
 - `dist/client/main.lua` and `.map`
 - `dist/server/main.lua` and `.map`
 - `dist/backend/index.js`
 - `open77.lua`
 
-Cursor should use the generated tsconfig so completion follows the catalogue. Client files cannot see `TriggerClientEvent`. Server files cannot see `TriggerServerEvent`.
+The editor reads `tsconfig.json`, which selects the client or server project for the open file. Completion follows the catalogue. Client files cannot see `TriggerClientEvent`. Server files cannot see `TriggerServerEvent`.
 
 ## Companion environment
 

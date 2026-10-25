@@ -3,7 +3,7 @@
 `ts77 create` asks for a name, a template, an optional server directory, and whether to install dependencies. In a script or in CI, pass the answers as flags so it does not wait for input:
 
 ```bash
-npx ts77 create my_plugin --template gameplay --no-install
+npx ts2077 create my_plugin --template gameplay --no-install
 ```
 
 The name has to match the folder: a lowercase letter, then letters, digits, or underscores, 3 to 64 characters. `my-plugin` is rejected because of the hyphen. `my_plugin` is accepted.

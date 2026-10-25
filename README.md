@@ -22,37 +22,37 @@ npm run build:tools
 
 ## Create a plugin
 
-The npm package name is `ts77`. `open77-ts` is the same program.
+The npm package name is `ts2077`. The commands it installs are `ts77` and `open77-ts`.
 
 ```bash
-npx ts77 create my_plugin --template basic --no-install
+npx ts2077 create my_plugin --template basic --no-install
 cd my_plugin
 npm install
 npm run dev
 npm run build
 ```
 
-`npm run dev` watches TypeScript and rebuilds Lua. Add `--server <server-directory>` at create time, or later run `npx ts77 deploy --server <server-directory>`, to copy the resource into that server's `resources` folder. TS77 does not reload the dedicated server.
+`npm run dev` watches TypeScript and rebuilds Lua. Add `--server <server-directory>` at create time, or later run `npx ts2077 deploy --server <server-directory>`, to copy the resource into that server's `resources` folder. TS77 does not reload the dedicated server.
 
 ```bash
-npx open77-ts create my_resource --template basic
-npx open77-ts create my_job --template gameplay
-npx open77-ts create my_hud --template webui
-npx open77-ts create my_notes --template fullstack
+npx ts2077 create my_resource --template basic
+npx ts2077 create my_job --template gameplay
+npx ts2077 create my_hud --template webui
+npx ts2077 create my_notes --template fullstack
 ```
 
 The directory name and `open77-ts.json` `name` must match: a lowercase letter, then letters, digits, or underscores, 3 to 64 characters.
 
 ```bash
-npx open77-ts build my_resource
-npx open77-ts watch my_resource
-npx open77-ts validate my_resource
-npx open77-ts doctor my_resource
+npx ts2077 build my_resource
+npx ts2077 watch my_resource
+npx ts2077 validate my_resource
+npx ts2077 doctor my_resource
 ```
 
 `init` writes the basic template into an existing directory. `dev` watches TypeScript and, when `ui/` has Vite installed, starts the WebUI dev server at `http://127.0.0.1:5173/`.
 
-To copy a built resource into a server, set `serverResourcesDir` in `open77-ts.json` and run `npx open77-ts build <resource> --deploy`. Reloading a running server is a console command on that server (`reload <name>`). This CLI does not send it.
+To copy a built resource into a server, set `serverResourcesDir` in `open77-ts.json` and run `npx ts2077 build <resource> --deploy`. Reloading a running server is a console command on that server (`reload <name>`). This CLI does not send it. Inside this repository, `npx open77-ts` runs the same local program.
 
 ## Write gameplay
 
@@ -88,7 +88,7 @@ const [page, reason] = Open77.webui.create({ entry: "web/index.html" });
 const [ok, failure] = TriggerClientEvent("demo:pong", playerId, payload);
 ```
 
-Cursor reads `tsconfig.client.json` or `tsconfig.server.json` in the resource. Those files are rewritten on each build and point at the generated declarations, so completion follows the catalogue.
+`tsconfig.json` points the editor at `tsconfig.client.json` and `tsconfig.server.json`. Those two files are rewritten on each build and point at the generated declarations, so completion follows the catalogue.
 
 A client file cannot see `TriggerClientEvent`. A server file cannot see `TriggerServerEvent`. `class`, `async`, `Promise`, `Map`, `Set`, and Node.js imports are compile errors.
 

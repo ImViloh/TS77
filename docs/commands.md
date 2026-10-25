@@ -1,6 +1,6 @@
 # Commands
 
-The public executable is `ts77`. `open77-ts` runs the same file.
+The public executable is `ts77`. `open77-ts` runs the same file. The npm package name is `ts2077`.
 
 | Command | What it does |
 |---|---|
@@ -21,7 +21,7 @@ The public executable is `ts77`. `open77-ts` runs the same file.
 
 The sections below describe the same build in more detail.
 
-The CLI is `npx open77-ts` from this repository, or `open77-ts` after `npm link`. Every command except `types` and `map` takes an optional resource directory. The default is the current directory.
+The CLI is `npx ts2077` from the registry, or `npx open77-ts` from this repository. Every command except `types` and `map` takes an optional resource directory. The default is the current directory.
 
 ```text
 open77-ts <command>
@@ -44,10 +44,10 @@ open77-ts <command>
 ## create
 
 ```bash
-npx open77-ts create my_resource --template basic
-npx open77-ts create my_job --template gameplay
-npx open77-ts create my_hud --template webui
-npx open77-ts create my_notes --template fullstack --out E:\CODING\VOSS\resources\my_notes
+npx ts2077 create my_resource --template basic
+npx ts2077 create my_job --template gameplay
+npx ts2077 create my_hud --template webui
+npx ts2077 create my_notes --template fullstack --out E:\CODING\VOSS\resources\my_notes
 ```
 
 The destination folder name must equal `<name>`. `--out` sets that folder. Without `--out`, the folder is created in the current directory.
@@ -72,7 +72,7 @@ npx open77-ts build examples/hello_world --deploy
 For each selected target the build:
 
 1. Writes `src/generated/flags.ts` with the WebUI entry. `--dev` uses `web.devEntry` when it is set, so the page can load Vite on the player's machine.
-2. Writes `tsconfig.client.json` and `tsconfig.server.json` with paths to the SDK and the generated declarations.
+2. Writes `tsconfig.json`, `tsconfig.client.json`, and `tsconfig.server.json` with paths to the SDK and the generated declarations. The editor reads `tsconfig.json`.
 3. Rejects classes, async, Node imports, and SDK imports from the wrong runtime.
 4. Compiles client and server TypeScript to one Lua 5.4 bundle each, inlines the small TypeScriptToLua helpers, and removes the global `require` fallback. TypeScript under `src/modules` is compiled to `modules/*.lua` and listed as `file` entries for the client sandbox loader. `src/backend` is compiled with `tsc` so `require` and `import` of npm packages stay in Node.
 5. Scans the Lua for natives, refuses unknown or wrong-side calls, and records permissions.

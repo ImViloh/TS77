@@ -5,7 +5,7 @@ Install Node.js 20 or newer. The Node companion, when a plugin has one, expects 
 From a terminal:
 
 ```bash
-npx ts77 create my_plugin --template basic --no-install
+npx ts2077 create my_plugin --template basic --no-install
 cd my_plugin
 npm install
 npm run dev
@@ -24,9 +24,9 @@ That writes `open77.lua`, `dist/client/main.lua`, and `dist/server/main.lua`.
 To copy the resource onto a server you already have:
 
 ```bash
-npx ts77 deploy --server <path-to-the-server>
+npx ts2077 deploy --server <path-to-the-server>
 ```
 
 Restart that resource in OPEN//77 after the copy. TS77 does not reload the dedicated server.
 
-Open the project folder in Cursor or VS Code. The generated declarations in the toolchain supply hover text for natives: the summary, parameters, permissions, and the catalogue version.
+Open the project folder in Cursor or VS Code. `tsconfig.json` is already there. It points the editor at the client and server projects, so `@open77/sdk/client` and natives such as `GetCurrentResourceName` resolve. The hover text comes from the generated declarations: the summary, parameters, permissions, and the catalogue version.

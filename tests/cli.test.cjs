@@ -34,6 +34,9 @@ test("create writes npm scripts and deploy waits for a server directory", () => 
     assert.match(created.stdout, /npm run dev/);
     const pkg = JSON.parse(fs.readFileSync(path.join(dir, "package.json"), "utf8"));
     assert.equal(pkg.scripts.dev, "ts77 dev");
+    const editor = JSON.parse(fs.readFileSync(path.join(dir, "tsconfig.json"), "utf8"));
+    assert.ok(editor.references.some((item) => item.path === "./tsconfig.client.json"));
+    assert.equal(fs.existsSync(path.join(dir, "tsconfig.client.json")), true);
     assert.equal(pkg.scripts.build, "ts77 build");
     const again = spawnSync(process.execPath, [cli, "create", "cli_plugin", "--template", "basic", "--out", dir, "--no-install"], { encoding: "utf8" });
     assert.equal(again.status, 1);

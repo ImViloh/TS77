@@ -488,7 +488,7 @@ footer { color: var(--muted); border-top: 1px solid var(--line); margin-top: 36p
     <span class="pipe hot">OPEN//77</span>
   </div>
   <div class="grid">
-    <article class="card"><p class="idx">01 · FIRST HOUR</p><h3>A print statement</h3><p>Install Node, run four commands, and change one greeting. You do not write Lua, a tsconfig, or a manifest.</p></article>
+    <article class="card"><p class="idx">01 · FIRST HOUR</p><h3>A print statement</h3><p>Install Node, run four commands, and change one greeting. You do not write Lua or a manifest. Create writes <code>tsconfig.json</code> for the editor.</p></article>
     <article class="card"><p class="idx">02 · NEXT</p><h3>A real plugin</h3><p>The same project can grow a typed client/server event, a React page inside the game, and a Node process for npm packages such as RethinkDB.</p></article>
   </div>
 </section>
@@ -508,15 +508,15 @@ footer { color: var(--muted); border-top: 1px solid var(--line); margin-top: 36p
   <p>You need Node.js 20 or newer. If a plugin has a Node companion, use Node.js 22 or newer for that process. You also need an OPEN//77 server if you want to deploy. Reading this page and compiling a plugin do not require the game to be open.</p>
   <ol class="steps">
     <li>Install Node.js from the official Node website. Open a terminal and run <code>node -v</code>. A number of 20 or higher is enough to start.</li>
-    <li>TypeScript is a way to write JavaScript with declared types. TS77 installs it for you. You do not install TypeScriptToLua, and you do not create a <code>tsconfig.json</code>.</li>
+    <li>TypeScript is a way to write JavaScript with declared types. TS77 installs it for you. You do not install TypeScriptToLua, and you do not write <code>tsconfig.json</code> yourself. <code>ts2077 create</code> writes it, and that is the file the editor reads.</li>
     <li>Create a plugin. The folder name and the resource name are the same slug: a lowercase letter, then letters, digits, or underscores, 3 to 64 characters. <code>my_plugin</code> is valid. <code>my-plugin</code> is not, because of the hyphen.</li>
   </ol>
-  <pre>npx ts77 create my_plugin --template basic --no-install
+  <pre>npx ts2077 create my_plugin --template basic --no-install
 cd my_plugin
 npm install
 npm run dev</pre>
-  <p><code>npx</code> downloads the <code>ts77</code> command. <code>--no-install</code> skips an extra install during creation. <code>npm install</code> then installs TS77 into the plugin. <code>npm run dev</code> watches <code>src/</code> and rebuilds Lua when you save.</p>
-  <p class="note">The npm package was prepared and installed from a packed tarball in testing. It was not published to the registry from this workspace, because the machine was not logged in to npm. Until it is published, <code>npx ts77</code> works after the package exists on the registry, or you install the local tarball.</p>
+  <p><code>npx ts2077</code> downloads the package. It provides the <code>ts77</code> and <code>open77-ts</code> commands. <code>--no-install</code> skips an extra install during creation. <code>npm install</code> then installs the package into the plugin. <code>npm run dev</code> watches <code>src/</code> and rebuilds Lua when you save.</p>
+  <p class="note"><code>npx ts2077</code> installs this package from the npm registry. The commands it provides are <code>ts77</code> and <code>open77-ts</code>.</p>
 </section>
 
 <section id="first">
@@ -529,7 +529,7 @@ npm run dev</pre>
     <tr><td><code>webui</code></td><td>You want a React page inside the game's Chromium surface.</td></tr>
     <tr><td><code>fullstack</code></td><td>You want gameplay, React, and a Node companion. Only this template starts Node.</td></tr>
   </table>
-  <p>Open the folder in Cursor or VS Code. Hover a native such as <code>GetCurrentResourceName</code>. The declaration shows the summary, the parameters, the permission, and the catalogue version. That text comes from the OPEN//77 Devkit index, not from a guess.</p>
+  <p>Open the folder in Cursor or VS Code. <code>tsconfig.json</code> selects <code>tsconfig.client.json</code> or <code>tsconfig.server.json</code> for the file you have open. That is how <code>@open77/sdk/client</code> and the native declarations are found. Hover a native such as <code>GetCurrentResourceName</code>. The declaration shows the summary, the parameters, the permission, and the catalogue version. That text comes from the OPEN//77 Devkit index, not from a guess.</p>
   <pre>npm run build</pre>
   <p>Build writes <code>open77.lua</code>, <code>dist/client/main.lua</code>, and <code>dist/server/main.lua</code>. Leave those files alone. Change the TypeScript and build again.</p>
 </section>
@@ -678,7 +678,7 @@ const db = require("rethinkdb");</pre>
 
 <section id="deploy">
   <h2>Deploy</h2>
-  <pre>npx ts77 deploy --server D:\\open77-server</pre>
+  <pre>npx ts2077 deploy --server D:\\open77-server</pre>
   <p>The server directory is the folder that contains <code>server.jsonc</code>. TS77 copies into <code>resources/&lt;plugin&gt;</code> inside it. The copy includes the manifest, <code>dist</code>, <code>web</code>, <code>modules</code>, and <code>files</code>. It does not include <code>node_modules</code>, <code>src</code>, or <code>.env</code>.</p>
   <p>If you have not named a server, deploy stops and tells you. It does not pick a folder on its own. After the copy, restart that resource on the server. TS77 does not reload the dedicated server.</p>
   <p>The wizard looks for <code>server.jsonc</code> in the current directory, parent directories, <code>OPEN77_SERVER</code>, and folders next to the toolchain.</p>
