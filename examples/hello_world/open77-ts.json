@@ -1,0 +1,12 @@
+{
+  "name": "hello_world",
+  "version": "1.0.0",
+  "client": "src/client/main.ts",
+  "server": "src/server/main.ts",
+  "permissions": [],
+  "web": {
+    "entry": "web/index.html",
+    "devEntry": "http://127.0.0.1:5173/",
+    "root": "ui"
+  }
+}

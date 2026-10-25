@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "types": [],
+    "lib": [
+      "ESNext"
+    ],
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "ignoreDeprecations": "6.0",
+    "baseUrl": "E:\\CODING\\TS77\\examples\\player_notes",
+    "paths": {
+      "@open77/sdk/shared": [
+        "../../packages/sdk/src/shared/index.ts"
+      ],
+      "@open77-ts/shared": [
+        "../../packages/shared/src/contracts.ts"
+      ],
+      "@open77/sdk/client": [
+        "../../packages/sdk/src/client/index.ts"
+      ],
+      "@open77-ts/client": [
+        "../../packages/sdk/src/client/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "src/client/**/*.ts",
+    "src/shared/**/*.ts",
+    "src/generated/**/*.ts",
+    "src/modules/**/*.ts",
+    "../../packages/types/generated/client.d.ts"
+  ],
+  "tstl": {
+    "luaTarget": "5.4",
+    "luaLibImport": "inline",
+    "luaBundle": "E:\\CODING\\TS77\\examples\\player_notes\\dist\\client\\main.lua",
+    "luaBundleEntry": "E:\\CODING\\TS77\\examples\\player_notes\\src\\client\\index.ts",
+    "noImplicitSelf": true,
+    "sourceMapTraceback": false
+  }
+}

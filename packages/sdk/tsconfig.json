@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "outDir": "dist",
+    "rootDir": "src/shared",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": false,
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["src/shared/net.ts"]
+}

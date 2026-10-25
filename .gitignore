@@ -1,0 +1,13 @@
+node_modules/
+dist/
+packages/*/dist/
+examples/**/dist/
+examples/**/web/
+examples/**/ui/node_modules/
+examples/**/src/webui/node_modules/
+templates/**/ui/node_modules/
+templates/**/dist/
+spike/
+*.lua.map
+**/src/backend/open77-npm.d.ts
+**/.open77/

@@ -1,0 +1,66 @@
+{
+  "name": "ts77",
+  "version": "1.0.0",
+  "description": "TypeScript framework for OPEN//77 plugins. Compiles gameplay to Lua 5.4 and can host a React WebUI and an optional Node companion.",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "ts77": "./packages/cli/dist/cli.js",
+    "open77-ts": "./packages/cli/dist/cli.js"
+  },
+  "files": [
+    "packages/cli/dist",
+    "packages/compiler/dist",
+    "packages/types/dist",
+    "packages/types/generated",
+    "packages/sdk/src",
+    "packages/shared/dist",
+    "packages/shared/src",
+    "packages/shared/package.json",
+    "packages/node/dist",
+    "packages/node/src",
+    "packages/node/package.json",
+    "packages/client/package.json",
+    "packages/server/package.json",
+    "packages/webui",
+    "templates",
+    "docs",
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "bundleDependencies": [
+    "@open77-ts/node",
+    "@open77-ts/shared"
+  ],
+  "scripts": {
+    "generate": "node packages/types/dist/generate.js",
+    "build:tools": "tsc -p packages/types/tsconfig.json && tsc -p packages/compiler/tsconfig.json && tsc -p packages/cli/tsconfig.json && npm run generate && tsc -p packages/sdk/tsconfig.json && tsc -p packages/shared/tsconfig.json && tsc -p packages/node/tsconfig.json",
+    "test": "npm run build:tools && node --test tests/framework.test.cjs tests/bridge.test.cjs tests/cli.test.cjs",
+    "docs:check": "node scripts/check-docs.cjs",
+    "prepublishOnly": "npm test && npm run docs:check"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "@open77-ts/node": "file:packages/node",
+    "@open77-ts/shared": "file:packages/shared",
+    "@types/luaparse": "^0.2.13",
+    "@types/pg": "^8.15.4",
+    "@types/node": "^22.19.1",
+    "@types/ws": "^8.18.1",
+    "fastify": "^5.3.3",
+    "ioredis": "^5.6.1",
+    "luaparse": "^0.3.1",
+    "mysql2": "^3.14.1",
+    "pg": "^8.16.0",
+    "source-map": "^0.7.4",
+    "tsx": "^4.20.6",
+    "typescript": "^6.0.2",
+    "typescript-to-lua": "^1.37.1",
+    "ws": "^8.18.2",
+    "zod": "^3.25.76"
+  }
+}

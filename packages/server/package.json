@@ -1,0 +1,7 @@
+{
+  "name": "@open77-ts/server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Server gameplay SDK. The Lua compiler resolves this name to packages/sdk/src/server. The Node bridge lives at @open77-ts/server/bridge and is server Lua, not the companion.",
+  "types": "../sdk/src/server/index.ts"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "@open77-ts/webui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Typed wrappers for the OPEN//77 Chromium page bridge. This package runs in the page, not in Node and not in Lua.",
+  "types": "./src/index.ts"
+}

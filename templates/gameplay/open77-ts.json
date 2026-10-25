@@ -1,0 +1,7 @@
+{
+  "name": "__RESOURCE__",
+  "version": "1.0.0",
+  "client": "src/client/main.ts",
+  "server": "src/server/main.ts",
+  "permissions": []
+}

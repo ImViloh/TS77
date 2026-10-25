@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    background: transparent;
+    color: #f4efe6;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.panel {
+    width: 280px;
+    margin: 16px;
+    padding: 12px;
+    background: rgba(12, 14, 18, 0.88);
+    border: 1px solid #fcee0a;
+}
+
+button, input {
+    font: inherit;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 8px 0;
+}

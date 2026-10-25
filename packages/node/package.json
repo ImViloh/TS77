@@ -1,0 +1,8 @@
+{
+  "name": "@open77-ts/node",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js companion for an OPEN//77 server. It is a separate process. It is not loaded into the Lua sandbox.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts"
+}

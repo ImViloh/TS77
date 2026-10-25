@@ -1,0 +1,12 @@
+{
+  "name": "@open77-ts/shared",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Serializable contracts and the HTTP bridge codec. This code is valid in Lua and in Node.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./protocol": "./dist/protocol.js"
+  }
+}

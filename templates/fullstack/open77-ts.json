@@ -1,0 +1,13 @@
+{
+  "name": "__RESOURCE__",
+  "version": "1.0.0",
+  "targets": ["open77-client", "open77-server", "node", "webui"],
+  "client": "src/client/index.ts",
+  "server": "src/server/index.ts",
+  "backend": "src/backend/index.ts",
+  "web": {
+    "root": "src/webui",
+    "entry": "web/index.html",
+    "devEntry": "http://127.0.0.1:5173/"
+  }
+}

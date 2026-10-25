@@ -1,0 +1,7 @@
+{
+  "name": "@open77-ts/client",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Client gameplay SDK. The Lua compiler resolves this name to packages/sdk/src/client. Node does not execute it.",
+  "types": "../sdk/src/client/index.ts"
+}

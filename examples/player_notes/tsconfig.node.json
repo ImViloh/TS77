@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "outDir": "E:\\CODING\\TS77\\examples\\player_notes\\dist\\backend",
+    "rootDir": "E:\\CODING\\TS77\\examples\\player_notes\\src\\backend",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "E:\\CODING\\TS77\\node_modules\\@types",
+      "E:\\CODING\\TS77\\examples\\player_notes\\node_modules\\@types"
+    ],
+    "ignoreDeprecations": "6.0",
+    "baseUrl": "E:\\CODING\\TS77\\examples\\player_notes",
+    "paths": {
+      "@open77-ts/node": [
+        "../../packages/node/dist/index.d.ts"
+      ],
+      "@open77-ts/shared": [
+        "../../packages/shared/dist/index.d.ts"
+      ]
+    }
+  },
+  "include": [
+    "./src/backend/**/*.ts"
+  ]
+}
